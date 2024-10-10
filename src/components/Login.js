@@ -1,6 +1,8 @@
 import React,{useRef, useState} from 'react'
 import Header from './Header';
 import {checkValidData} from "../utils/validate"
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
+import { auth } from '../utils/firebase';
 
 const Login = () => {
     const [isSignInForm, setIsSignInForm] = useState(true);
@@ -11,11 +13,51 @@ const Login = () => {
     const passwordRef = useRef(null); 
 
     const handleButtonClick =() =>{
+        const name = nameRef?.current?.value;
+        const email = emailRef?.current?.value;
+        const password = passwordRef?.current?.value;
 
-        const message = checkValidData(nameRef.current.value, emailRef.current.value, passwordRef.current.value);
+        const message = checkValidData(name, email, password);
         setErrorMessage(message);
 
+        if(message ) return;
+
         //Sign / Sign Up
+        if(!setIsSignInForm){
+            //Sign Up Logic
+            createUserWithEmailAndPassword(
+                auth, 
+                email, 
+                password
+            )
+            .then((userCredential)=>{
+                const user = userCredential.user;
+                console.log(user);
+            })
+            .catch((error)=>{
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                setErrorMessage(errorCode + "-" + errorMessage)
+            })
+        } else {
+            //Sign In Logic
+
+              signInWithEmailAndPassword(
+                auth, 
+                email, 
+                password
+            )
+              .then((userCredential)=>{
+                //
+                const user = userCredential.user;
+                console.log(user);
+              })
+              .catch((error)=>{
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                setErrorMessage(errorCode + "-" + errorMessage);
+              });
+        }
     };
 
     
