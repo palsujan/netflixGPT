@@ -52,7 +52,7 @@ const Login = () => {
                             photoURL:photoURL
                         })
                     );
-                    navigate("/browse");
+                    // navigate("/browse");
 
                   }).catch((error) => {
                     // An error occurred

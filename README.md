@@ -16,6 +16,8 @@
   - Redux Install - npm i -D @redux/toolkit - npm i react-redux
 - Created redux store with user slice
 - Implemented Sign out
+  -Update Profile
+- Fetch from TMDB Movies
 
 # Features
 
