@@ -11,9 +11,11 @@
 - Firebase Setup -firebase init
 - Create SignUp User Accont
 - Implement Sign In user API
-- Deploying our app to production - firebase deploy
-- Authentication Create Sign Up user account
-- Redux Install - npm i -D @redux/toolkit - npm i react-redux
+  - Deploying our app to production - firebase deploy
+  - Authentication Create Sign Up user account
+  - Redux Install - npm i -D @redux/toolkit - npm i react-redux
+- Created redux store with user slice
+- Implemented Sign out
 
 # Features
 
