@@ -16,7 +16,12 @@
   - Redux Install - npm i -D @redux/toolkit - npm i react-redux
 - Created redux store with user slice
 - Implemented Sign out
-  -Update Profile
+- Update Profile
+- Bug fix: Sign Up user displayName and profile picture update
+- Bug fix:if the user is not logged in Redirect /browse to login page and vice-verca
+- Unsuscribe to the onAuthStateChanged calback
+- Add hardcoded values to the contatnts file
+
 - Fetch from TMDB Movies
 
 # Features
