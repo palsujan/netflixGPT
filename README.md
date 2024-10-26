@@ -22,7 +22,16 @@
 - Unsuscribe to the onAuthStateChanged calback
 - Add hardcoded values to the contatnts file
 
-- Fetch from TMDB Movies
+- Register TNDB API & Create an app & get access token
+- Get data from TMDB now playing movies lists API
+- Custom Hook for now Playing Movies
+- Create MovieSlice
+- Update store movies Data
+- Planning for MainContainer and Secondary Container
+- Ftech data for Trailer Video
+- Update Store with trailer Video Data
+- Embedded the YouTube video and make it autoplay and Mute
+- Tailwind Classes to make Main conatiner hook aswesome
 
 # Features
 
