@@ -54,8 +54,9 @@ const Header = () => {
         src={LOGO} alt='Netflix Logo'/>
        { user && (
         <div className='flex p-2'>
+          <button className='py-2  px-4 m-2 bg-purple-800 text-white rounded-lg' onClick={handleGptSearchClick}>GPT Search</button>
           <img className='w-12 h-12' src={user?.photoURL} alt='User Icon'/>
-          <button onClick={handleSignOut} className='font-bold text-white'> (Sign Out)</button>
+          <button onClick={handleSignOut} className='font-bold text-white px-2'> (Sign Out)</button>
         </div>
       )}
     </div>
