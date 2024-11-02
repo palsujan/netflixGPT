@@ -12,6 +12,7 @@ const Header = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const user = useSelector(store =>store.user)
+  const showGptSearch = useSelector((store) => store.gpt.showGptSearch);
   const handleSignOut = () =>{
     signOut(auth).then(() => {
       // Sign-out successful.
@@ -64,13 +65,17 @@ const handleLanguageChange = (e) =>{
         src={LOGO} alt='Netflix Logo'/>
        { user && (
         <div className='flex p-2'>
-          <select className='p-2 m-2 bg-gray-900 text-white cursor-pointer' onChange={handleLanguageChange}>
+          {
+          showGptSearch &&  <select className='p-2 m-2 bg-gray-900 text-white cursor-pointer' onChange={handleLanguageChange}>
             {SUPPORTED_LANGUAGES.map(lang=>  <option key={lang.identifier} value={lang.identifier}>{lang.name}</option>)}
 {/*              
               <option value="hindi">Hindi</option>
               <option value="spanish">Spanish</option> */}
           </select>
-          <button className='py-2  px-4 m-2 bg-purple-800 text-white rounded-lg' onClick={handleGptSearchClick}>GPT Search</button>
+          }
+          <button className='py-2  px-4 m-2 bg-purple-800 text-white rounded-lg' onClick={handleGptSearchClick}>
+              {showGptSearch ? "Home Page" : "GPT Search"}
+            </button>
           <img className='w-12 h-12' src={user?.photoURL} alt='User Icon'/>
           <button onClick={handleSignOut} className='font-bold text-white px-2'> (Sign Out)</button>
         </div>
