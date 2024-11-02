@@ -4,7 +4,7 @@ import { onAuthStateChanged, signOut } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { addUser, removeUser } from '../utils/userSlice';
-import { LOGO } from '../utils/constants';
+import { LOGO, SUPPORTED_LANGUAGES } from '../utils/constants';
 import { toggleGptSearchView } from '../utils/gptSlice';
 
 const Header = () => {
@@ -59,6 +59,12 @@ const handleGptSearchClick = () =>{
         src={LOGO} alt='Netflix Logo'/>
        { user && (
         <div className='flex p-2'>
+          <select className='p-2 m-2 bg-gray-900 text-white cursor-pointer'>
+            {SUPPORTED_LANGUAGES.map(lang=>  <option key={lang.identifier} value={lang.identifier}>{lang.name}</option>)}
+{/*              
+              <option value="hindi">Hindi</option>
+              <option value="spanish">Spanish</option> */}
+          </select>
           <button className='py-2  px-4 m-2 bg-purple-800 text-white rounded-lg' onClick={handleGptSearchClick}>GPT Search</button>
           <img className='w-12 h-12' src={user?.photoURL} alt='User Icon'/>
           <button onClick={handleSignOut} className='font-bold text-white px-2'> (Sign Out)</button>
