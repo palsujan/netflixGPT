@@ -54,3 +54,27 @@
 - NetFlixGPT
   - Search bar
   - Movie Suggestions
+
+- User & Password 
+  - Ratan@gmail.com  
+  - @Ratan12345
+## Live Demo
+
+Check out the live application here: [Netflix GPT](https://netflixgpt-5075c.web.app/)
+## Screenshots
+
+### Sign Up Page
+
+![Sign Up Page](./screenshots/screenshot1.png)
+
+### Login Page
+
+![Login Page](./screenshots/screenshot2.png)
+
+### Browse Page
+
+![Browse Page](./screenshots/screenshot3.png)
+
+### GPT Page
+
+![GPT Page](./screenshots/screenshot4.png)
